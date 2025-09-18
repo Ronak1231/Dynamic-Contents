@@ -1,0 +1,11 @@
+# Ignore the Streamlit secrets and configuration folder
+.streamlit/
+
+# Ignore the Python virtual environment folder
+venv/
+
+# Ignore the SQLite database file
+marketing_content.db
+
+# Ignore Python cache files
+__pycache__/
