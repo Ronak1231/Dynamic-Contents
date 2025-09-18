@@ -127,3 +127,30 @@ Then open the local URL shown in your terminal (usually `http://localhost:8501`)
 ## 📜 License  
 
 This project is licensed under the **MIT License** – feel free to modify and distribute.  
+
+---
+
+
+## 🤝 Acknowledgments
+
+**Special thanks to:**
+
+**Google AI** for Gemini Pro API
+
+**Streamlit** for building intuitive web apps
+
+**SQLite** for lightweight yet powerful database support
+
+All open-source contributors & libraries that made this project possible 🎉
+
+---
+
+## ✍️ Author
+
+**Ronak Bansal**    
+💼 **Power Platform Developer at SmartNet Software**
+🎓 **B.Tech – Computer Science & Engineering (AI & DS), MIT World Peace University**
+🤖 Passionate about **Generative AI, Intelligent Automation & Emerging Tech**
+📧 Email: ronakbansal12345@gmail.com
+📎 GitHub: [Ronak1231](https://github.com/Ronak1231)
+🔗 LinkedIn: [Ronak_Bansal](https://www.linkedin.com/in/ronak-bansal-715605253/)
