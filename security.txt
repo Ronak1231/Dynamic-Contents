@@ -1,0 +1,44 @@
+Great question — this is an important security point ⚡.
+
+If you’re deploying your Streamlit app on Streamlit Cloud, you must not push your API keys to GitHub. Instead, use Streamlit’s built-in secrets management:
+
+✅ How to Securely Store API Keys in Streamlit Cloud
+
+Remove your secrets.toml from GitHub
+
+Make sure .streamlit/secrets.toml is in your .gitignore file.
+
+Delete it from your repo if it’s already committed (use git rm --cached .streamlit/secrets.toml).
+
+Use Streamlit Cloud Secrets Manager
+
+Go to your project on Streamlit Cloud
+.
+
+Open Settings → Secrets.
+
+Paste your API keys in this format:
+
+GEMINI_API_KEY = "your-gemini-key"
+GOOGLE_CUSTOM_SEARCH_API_KEY = "your-google-search-key"
+SEARCH_ENGINE_ID = "your-search-engine-id"
+
+
+Save them — they will now be injected securely at runtime.
+
+Access secrets in your code
+Instead of reading secrets.toml locally, do this in your app.py:
+
+import streamlit as st
+
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+GOOGLE_CUSTOM_SEARCH_API_KEY = st.secrets["GOOGLE_CUSTOM_SEARCH_API_KEY"]
+SEARCH_ENGINE_ID = st.secrets["SEARCH_ENGINE_ID"]
+
+
+Run locally with secrets
+If you still want to test locally with a secrets.toml file, you can keep it in .streamlit/secrets.toml but don’t commit it. Streamlit automatically picks it up locally.
+
+👉 This way, your API keys never appear in GitHub, but they’re still available to your app both locally and in the cloud.
+
+Do you want me to update your README.md with a new “Deployment & Secrets Management” section so anyone cloning your repo knows exactly how to set this up safely?

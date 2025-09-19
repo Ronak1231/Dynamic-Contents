@@ -9,3 +9,6 @@ marketing_content.db
 
 # Ignore Python cache files
 __pycache__/
+
+# Ignore the app.py
+app.py

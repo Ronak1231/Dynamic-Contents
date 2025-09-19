@@ -18,8 +18,8 @@ st.set_page_config(
 # --- API Configuration & Models ---
 try:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    # Using a more powerful model is recommended for very long and detailed content
-    text_model = genai.GenerativeModel("gemini-1.5-pro-latest") 
+    # --- FINAL CHANGE: Using the best free-tier model for deployment ---
+    text_model = genai.GenerativeModel("gemini-1.5-flash-latest") 
     GOOGLE_API_KEY = st.secrets["GOOGLE_CUSTOM_SEARCH_API_KEY"]
     SEARCH_ENGINE_ID = st.secrets["SEARCH_ENGINE_ID"]
 except Exception as e:
@@ -129,7 +129,8 @@ if st.session_state['logged_in']:
     app_mode = st.sidebar.selectbox("Choose a tool", ["Marketing Content Generator", "My Content History"])
 
     if app_mode == "Marketing Content Generator":
-        st.title("🚀 Dynamic Marketing Content Generator")
+        st.title("🚀 AI Marketing Suite")
+        st.markdown("Your strategic partner for generating in-depth, professional marketing content.")
         
         product_name = st.text_input("Product Name:", placeholder="e.g., 'Microsoft Copilot Studio'")
         product_desc = st.text_area("Product Description:", placeholder="e.g., 'A unified conversational AI platform for building custom copilots.'")
@@ -139,8 +140,9 @@ if st.session_state['logged_in']:
             if not product_name:
                 st.warning("Please provide a product name.")
             else:
+                st.toast(f"Generating premium content for {product_name}...", icon="🧠")
                 with st.spinner("AI is crafting your long-form content... This may take a moment. 🪄"):
-                    # --- MASTER PROMPT V4: FOR LONG-FORM, ELABORATE CONTENT ---
+                    # --- MASTER PROMPT V4.1: Optimized for Flash Model ---
                     prompt = f"""
                     **Persona:** You are a Senior Product Marketing Manager at a leading enterprise software company. You specialize in creating long-form, in-depth, and highly persuasive content for a sophisticated technical and business audience. Your goal is to educate, build trust, and drive consideration.
 

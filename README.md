@@ -67,6 +67,11 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+- if does't work use
+
+```bash
+python -m pip install -r .\requirements.txt
+```
 
 ### 4️⃣ Configure API Keys (**Important**)  
 Create `.streamlit/secrets.toml` and add:  
@@ -79,20 +84,50 @@ SEARCH_ENGINE_ID = "YOUR_SEARCH_ENGINE_ID_HERE"
 ```
 
 ---
+# 🔑 Getting API Keys  
 
-## 🔑 Getting API Keys  
+## A. Gemini API Key  
+1. Open [Google AI Studio](https://aistudio.google.com/).  
+2. Sign in with your Google account.  
+3. Click **Get API Key** → Create a new key.  
+4. Copy the key and save it in your `secrets.toml` file as:  
 
-### A. Gemini API Key  
-1. Go to [Google AI Studio](https://aistudio.google.com/).  
-2. Sign in → **Get API Key** → Create a new key.  
-3. Copy & paste it into `secrets.toml`.  
+```toml
+GEMINI_API_KEY = "your_api_key_here"
+```  
 
-### B. Google Custom Search API Key & Search Engine ID  
+---
+
+## B. Google Custom Search API Key & Search Engine ID  
+
+### Step 1: Enable the API  
 1. Go to [Google Cloud Console](https://console.cloud.google.com/).  
-2. Create/select a project → Enable **Custom Search API**.  
-3. Go to **APIs & Services > Credentials** → Create API key.  
-4. Go to [Programmable Search Engine](https://programmablesearchengine.google.com/).  
-5. Create a search engine → Enable **Image Search** → Copy **Search Engine ID**.  
+2. Create a **new project** (or select an existing one).  
+3. Open this link to enable the API:  
+👉 [Enable Custom Search API](https://console.cloud.google.com/apis/api/customsearch.googleapis.com/)  
+
+### Step 2: Create API Key  
+4. In the Google Cloud Console, go to:  
+   **APIs & Services → Credentials → Create Credentials → API Key**.  
+5. Copy the generated API key and add it to `secrets.toml`:  
+
+```toml
+GOOGLE_CUSTOM_SEARCH_API_KEY = "your_api_key_here"
+```  
+
+### Step 3: Create a Programmable Search Engine  
+6. Open [Programmable Search Engine](https://programmablesearchengine.google.com/).  
+7. Click **Add** → Enter a site (you can add `www.google.com` for global search).  
+8. Go to **Control Panel → Basics** → Copy the **Search Engine ID (cx)**.  
+9. Save it in `secrets.toml`:  
+
+```toml
+SEARCH_ENGINE_ID = "your_key_here"
+```  
+
+---
+
+✅ Now both your **Gemini API** and **Custom Search API** are ready to use securely.  
 
 ---
 
@@ -100,6 +135,12 @@ SEARCH_ENGINE_ID = "YOUR_SEARCH_ENGINE_ID_HERE"
 
 ```bash
 streamlit run app.py
+```
+
+- if does't work use
+
+```bash
+python -m streamlit run marketing_app.py
 ```
 
 Then open the local URL shown in your terminal (usually `http://localhost:8501`).  
@@ -133,24 +174,20 @@ This project is licensed under the **MIT License** – feel free to modify and d
 
 ## 🤝 Acknowledgments
 
-**Special thanks to:**
-
-**Google AI** for Gemini Pro API
-
-**Streamlit** for building intuitive web apps
-
-**SQLite** for lightweight yet powerful database support
-
-All open-source contributors & libraries that made this project possible 🎉
+1. **Special thanks to:**
+2. **Google AI** for Gemini Pro API
+3. **Streamlit** for building intuitive web apps
+4. **SQLite** for lightweight yet powerful database support
+5. All open-source contributors & libraries that made this project possible 🎉
 
 ---
 
 ## ✍️ Author
 
 **Ronak Bansal**    
-💼 **Power Platform Developer at SmartNet Software**
-🎓 **B.Tech – Computer Science & Engineering (AI & DS), MIT World Peace University**
-🤖 Passionate about **Generative AI, Intelligent Automation & Emerging Tech**
-📧 Email: ronakbansal12345@gmail.com
-📎 GitHub: [Ronak1231](https://github.com/Ronak1231)
-🔗 LinkedIn: [Ronak_Bansal](https://www.linkedin.com/in/ronak-bansal-715605253/)
+- 💼 **Power Platform Developer at SmartNet Software**
+- 🎓 **B.Tech – Computer Science & Engineering (AI & DS), MIT World Peace University**
+- 🤖 Passionate about **Generative AI, Intelligent Automation & Emerging Tech**
+- 📧 Email: ronakbansal12345@gmail.com
+- 📎 GitHub: [Ronak1231](https://github.com/Ronak1231)
+- 🔗 LinkedIn: [Ronak_Bansal](https://www.linkedin.com/in/ronak-bansal-715605253/)
