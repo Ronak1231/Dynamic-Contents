@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignore the app.py
 app.py
+
+# Ignore the security.txt
+security.txt
